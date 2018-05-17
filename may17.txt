@@ -1,0 +1,104 @@
+package com.may17;
+
+public class constructexample
+{
+int empno;
+String name,address;
+constructexample(int emp,String n,String ad)
+{
+	empno=emp;
+	name=n;
+	address=ad;
+}
+void display()
+{
+	System.out.println("empno is "+empno+"name is "+name+"address is"+address);
+}
+public static void main(String[] args)
+{
+	constructexample ob=new constructexample(101,"divs","bangalore");
+	ob.display();
+}
+
+}
+
+output:-
+empno is 101name is divsaddress isbangalore
+
+------------------------------------------------------------------
+public class constructexample
+{
+int empno;
+String name,address;
+constructexample(int empno,String name,String address)
+	{//this is a self referencial pointer which points to itself.
+	this.empno=empno;
+	this.name=name;
+	this.address=address;
+	}
+void display()
+	{
+	System.out.println("empno is "+empno+"name is "+name+"address is"+address);
+	}
+public static void main(String[] args)
+	{
+		constructexample ob=new constructexample(101,"divs","bangalore");
+		ob.display();
+	}
+}
+
+
+output:-
+empno is 101name is divsaddress isbangalore
+--------------------------------------------------------
+parent class:- constructexample
+
+
+public class constructexample
+{
+int empno;
+String name,address;
+constructexample(int empno,String name,String address)
+{//this is a self referencial pointer which points to itself.
+	this.empno=empno;
+	this.name=name;
+	this.address=address;
+}
+void display()
+{
+	System.out.println("empno is "+empno+"name is "+name+"address is"+address);
+}
+}
+
+chaild class:-constructexample1
+
+
+ public class constructexample1 extends constructexample
+{
+	 int salary;
+String design;
+	constructexample1(int empno, String name, String address,int salary,String design) 
+	{
+		super(empno, name, address);
+	this.salary=salary;
+	this.design=design;
+	
+	}
+void display()
+{
+	super.display();
+	System.out.println("the salary "+salary+"designation is "+design);
+	
+}
+	public static void main(String[] args)
+	{
+		constructexample1 ob=new constructexample1(101,"divs","bangalore",4500,"off");
+		ob.display();
+	}
+}
+
+
+output:
+empno is 101name is divsaddress isbangalore
+the salary 4500designation is off
+
