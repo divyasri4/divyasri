@@ -21,3 +21,18 @@ System.out.println("the sum of 5 numbers is"+sum);
 }
 
 }
+output:
+enter 5 no's
+
+1
+2
+3
+4
+5
+5 numbers are
+1
+2
+3
+4
+5
+the sum of 5 numbers is15
