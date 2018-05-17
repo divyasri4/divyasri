@@ -25,5 +25,20 @@ public class concatenation {
 	}
 	
 	}
+out put:
+string buffer= She is
+s append= She is25
+s append= She is25years old.
+entire string= She is25years old.
+length= 18
+capacity= 22
+s1 =Hello to Mphasis
+charAt=e
+s1=Hillo
+set insert=Hillowelcome
+to delete=Hilloelcome
+to reverse=emocleolliH
+She is25years old.
+emocleolliH
 
 
