@@ -1,0 +1,48 @@
+package com.may18;
+import java.util.*;
+public class exceptionexpl1
+{
+public static void main(String[] args)
+{
+	try
+	{
+		int a[]=new int[5];
+		Scanner ob=new Scanner(System.in);
+		System.out.println("enter 5 no's");
+		for(int i=0;i<5;i++)
+		a[i]=ob.nextInt();
+		System.out.println("the 5 no's are");
+		for(int i=0;i<=5;i++)
+		System.out.println(a[i]);
+	}
+	catch(Exception ae)
+	{
+		System.out.println("the error is"+ae);	
+	}
+	
+	finally
+	
+	{
+	System.out.println("the program continues.......");
+	}
+}
+}
+
+
+output:-
+enter 5 no's
+1
+2
+3
+
+4
+5
+the 5 no's are
+1
+2
+3
+4
+5
+the error isjava.lang.ArrayIndexOutOfBoundsException: 5
+the program continues.......
+
