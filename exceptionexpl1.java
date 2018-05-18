@@ -28,3 +28,11 @@ public static void main(String[] args)
 	
 }
 }
+
+
+output:
+enter 2 no's
+10
+0
+the error isjava.lang.ArithmeticException: / by zero
+the program continues.......
