@@ -1,0 +1,25 @@
+package com.may18;
+import java.util.*;
+public class exceptionexpl1 extends Thread//we need to write "extends Thread" since we included checked exception,thread is a class.
+{
+public static void main(String[] args) throws Exception//since sleep is a throw exception,we need to mention that.
+{
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter the marks");
+	int a=ob.nextInt();
+	if(a<=0)
+	throw new Exception("the number should be greater than 0");
+	else
+		System.out.println("the entered number is ok");
+		
+	
+}
+}
+
+
+
+output:-
+enter the marks
+0
+Exception in thread "main" java.lang.Exception: the number should be greater than 0
+	at com.may18.exceptionexpl1.main(exceptionexpl1.java:11)
