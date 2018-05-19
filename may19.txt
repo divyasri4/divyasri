@@ -1,0 +1,311 @@
+[1]Arraylist example:-
+
+package com.may19;
+import java.util.*;
+public class ArrayListexample  
+{
+public static void main(String[] args)
+{
+	ArrayList a1=new ArrayList();
+	a1.add("10");
+	a1.add("30");
+	a1.add("40");
+	a1.add("20");
+	a1.add("50");
+	System.out.println(a1);
+	a1.add(3,"500");//40 to move to next position and 500 will be added there
+	System.out.println(a1);
+	a1.remove(2); //20 will be removed
+	a1.set(4,"1000"); //replaces 50 by 1000
+	System.out.println(a1);
+	System.out.println(a1.size());
+	a1.clear();//cleares the arraylist
+	System.out.println(a1);
+	System.out.println(a1.size());
+}
+}
+
+output:-
+[10, 30, 40, 20, 50]
+[10, 30, 40, 500, 20, 50]
+[10, 30, 500, 20, 1000]
+5
+[]
+0
+--------------------------------------------------------------------------------
+[2]
+
+package com.may19;
+import java.util.*;
+public class ArrayListexample  
+{
+public static void main(String[] args)
+{
+	ArrayList a1=new ArrayList();
+	a1.add("10");
+	a1.add("30");
+	a1.add("40");
+	a1.add("20");
+	a1.add("50");
+	System.out.println(a1);
+	a1.add(3,"500");//40 to move to next position and 500 will be added there
+	System.out.println(a1);
+	a1.remove(2); //20 will be removed
+	a1.set(4,"1000"); //replaces 50 by 1000
+	System.out.println(a1);
+	for(Object obj:a1)//prints all the values in arraylist in one by one order
+		System.out.println(obj);
+}
+}
+
+
+output:-
+[10, 30, 40, 20, 50]
+[10, 30, 40, 500, 20, 50]
+[10, 30, 500, 20, 1000]
+10
+30
+500
+20
+1000
+-----------------------------------------------------------------
+[3]iterate,listIterator
+
+package com.may19;
+import java.util.*;
+public class ArrayListexample  
+{
+public static void main(String[] args)
+{
+	ArrayList a1=new ArrayList();
+	a1.add("10");
+	a1.add("30");
+	a1.add("40");
+	a1.add("20");
+	a1.add("50");
+	System.out.println(a1);
+	a1.add(3,"500");//40 to move to next position and 500 will be added there
+	System.out.println(a1);
+	a1.remove(2); //20 will be removed
+	a1.set(4,"1000"); //replaces 50 by 1000
+	System.out.println(a1);
+	for(Object obj:a1)//prints all the values in arraylist in one by one order
+		System.out.println(obj);
+System.out.println("*******************************************");
+Iterator it=a1.iterator();
+while(it.hasNext())//gives the values in arratlist in the same order
+{
+	System.out.println(it.next());
+}
+System.out.println("Forward direction");//gives the values in arratlist in the same order(front to back)
+ListIterator it1=a1.listIterator();
+while(it1.hasNext())
+{
+	System.out.println(it1.next());
+}
+System.out.println("Backward Direction");//gives the ellements in the arraylist from back to front
+while(it1.hasPrevious())
+{
+	System.out.println(it1.previous());
+}
+}
+}
+
+
+output:-
+
+[10, 30, 40, 20, 50]
+[10, 30, 40, 500, 20, 50]
+[10, 30, 500, 20, 1000]
+10
+30
+500
+20
+1000
+*******************************************
+10
+30
+500
+20
+1000
+Forward direction
+10
+30
+500
+20
+1000
+Backward Direction
+1000
+20
+500
+30
+10
+-------------------------------
+[4]Enumeration
+
+package com.may19;
+import java.util.*;
+public class ArrayListexample  
+{
+public static void main(String[] args)
+
+{
+ Vector a1=new Vector();
+	a1.add("10");
+	a1.add("30");
+	a1.add("40");
+	a1.add("20");
+	a1.add("50");
+	System.out.println(a1);
+	a1.add(3,"500");//40 to move to next position and 500 will be added there
+	System.out.println(a1);
+	a1.remove(2); //20 will be removed
+	a1.set(4,"1000"); //replaces 50 by 1000
+	System.out.println(a1);
+	for(Object obj:a1)//prints all the values in arraylist in one by one order
+		System.out.println(obj);
+System.out.println("*******************************************");
+Iterator it=a1.iterator();
+while(it.hasNext())//gives the values in arratlist in the same order
+{
+	System.out.println(it.next());
+}
+System.out.println("Forward direction");//gives the values in arratlist in the same order(front to back)
+ListIterator it1=a1.listIterator();
+while(it1.hasNext())
+{
+	System.out.println(it1.next());
+}
+System.out.println("Backward Direction");//gives the ellements in the arraylist from back to front
+while(it1.hasPrevious())
+{
+	System.out.println(it1.previous());
+}
+Enumeration en=a1.elements();
+while(en.hasMoreElements())//prints the elements in same order
+{
+	System.out.println(en.nextElement());
+}
+}
+}
+
+output:-
+[10, 30, 40, 20, 50]
+[10, 30, 40, 500, 20, 50]
+[10, 30, 500, 20, 1000]
+10
+30
+500
+20
+1000
+*******************************************
+10
+30
+500
+20
+1000
+Forward direction
+10
+30
+500
+20
+1000
+Backward Direction
+1000
+20
+500
+30
+10
+10
+30
+500
+20
+1000
+------------------------------------------------------
+[5]Stack example
+
+package com.may19;
+import java.util.*;
+
+public class stackexpl 
+{
+public static void main(String[] args)
+{
+	Stack ss=new Stack();
+	ss.push(10);
+	ss.push(20);
+	ss.push(30);
+	ss.push(40);
+	ss.push(50);
+	ss.push(60);
+	ss.push(70);
+	System.out.println(ss);
+	System.out.println(ss.pop());//deletes last element and prints that element
+	System.out.println(ss);
+	System.out.println(ss.peek());//prints the last element
+	System.out.println(ss.search(20));
+	System.out.println(ss.search(70));//-1 means the element is not there
+}
+}
+
+
+output:-
+
+[10, 20, 30, 40, 50, 60, 70]
+70
+[10, 20, 30, 40, 50, 60]
+60
+5
+-1
+-----------------------------------------------
+Hashtableexpl:-
+
+package com.may19;
+import java.util.*;
+public class HashtableEample
+{
+public static void main(String[] args)
+{
+	Hashtable<Integer,String> ht=new Hashtable<Integer,String>();//hashtable gives descending order.
+	ht.put(101,"divya");
+	ht.put(102,"swarna");
+	ht.put(103,"sri");
+	ht.put(104,"vij");
+	ht.put(105,"bang");
+	System.out.println(ht);
+ht.remove(104);
+System.out.println(ht);
+}
+
+}
+output:-
+{105=bang, 104=vij, 103=sri, 102=swarna, 101=divya}
+{105=bang, 103=sri, 102=swarna, 101=divya}
+---------------------------------------------------
+hashmap:-
+
+package com.may19;
+import java.util.*;
+public class Hsahmapexpl 
+{
+	public static void main(String[] args)
+	{
+		HashMap<Integer,String> ht=new HashMap<Integer,String>();//hashMap gives Ascending order.
+		ht.put(101,"divya");
+		ht.put(102,"swarna");
+		ht.put(103,"sri");
+		ht.put(104,"vij");
+		ht.put(103,"bang");//hashmap overrights the existing value,if we give duplicate values
+		ht.put(105,"kormangala");
+		System.out.println(ht);
+	ht.remove(104);
+	System.out.println(ht);
+	}
+
+	}
+
+output:-
+{101=divya, 102=swarna, 103=bang, 104=vij, 105=kormangala}
+{101=divya, 102=swarna, 103=bang, 105=kormangala}
+
+
