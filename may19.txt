@@ -307,5 +307,298 @@ public class Hsahmapexpl
 output:-
 {101=divya, 102=swarna, 103=bang, 104=vij, 105=kormangala}
 {101=divya, 102=swarna, 103=bang, 105=kormangala}
+-----------------------------------------------------------
+Threadexample:-
 
+package com.may19;
+import java.util.*;
+public class FirstThread extends Thread
+{
+public void run()
+{
+	try
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(i);
+			sleep(1000);
+		}
+	}
+	catch(Exception ae)
+	{
+		ae.printStackTrace();
+	}
+}
+public static void main(String[] args)
+{
+	FirstThread ob=new FirstThread();
+	FirstThread ob1=new FirstThread();
+	FirstThread ob2=new FirstThread();
+	ob.start();//all three objects will start at atime,and print the values at a time.
+	ob1.start();
+	ob2.start();	
+	}
+}
+output:
+
+1
+1
+1
+2
+2
+2
+3
+3
+3
+4
+4
+4
+5
+5
+5
+6
+6
+6
+7
+7
+7
+8
+8
+8
+9
+9
+9
+10
+10
+10
+------------------------------------------------
+[2a]
+package com.may19;
+
+public class FirstThread extends Thread
+{
+public void run()
+{
+	try
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(getName()+" "+i);
+			sleep(1000);//this will help in performing all objects together
+		}
+	}
+	catch(Exception ae)
+	{
+		ae.printStackTrace();
+	}
+}
+
+public static void main(String[] args)
+{
+	SecondThread ob=new SecondThread();
+	FirstThread ob1=new FirstThread();
+	FirstThread ob2=new FirstThread();
+	ob.start();//all three objects will start at a time,and print the values at a time.
+	ob1.start();
+	ob2.start();	
+	}
+}
+
+[2b]
+package com.may19;
+
+public class SecondThread extends Thread
+{
+	{
+	try
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(getName()+" "+i);
+			sleep(1000);//this will help in performing all objects together
+		}
+	}
+	catch(Exception ae)
+	{
+		ae.printStackTrace();
+	}
+}
+
+}
+
+
+output:-
+Thread-0 1
+Thread-0 2
+Thread-0 3
+Thread-0 4
+Thread-0 5
+Thread-0 6
+Thread-0 7
+Thread-0 8
+Thread-0 9
+Thread-0 10
+Thread-2 1
+Thread-1 1
+Thread-1 2
+Thread-2 2
+Thread-1 3
+Thread-2 3
+Thread-1 4
+Thread-2 4
+Thread-2 5
+Thread-1 5
+Thread-1 6
+Thread-2 6
+Thread-1 7
+Thread-2 7
+Thread-1 8
+Thread-2 8
+Thread-1 9
+Thread-2 9
+Thread-1 10
+Thread-2 10
+--------------------------------------
+
+implements Runnable:-
+
+
+
+
+
+package com.may19;
+
+public class FirstThread implements Runnable
+{
+public void run()
+{
+	try
+	{Thread t=Thread.currentThread();
+	String x=t.getName();
+	
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(x+" "+i);
+			Thread.sleep(1000);//this will help in performing all objects together
+		}
+	}
+	catch(Exception ae)
+	{
+		ae.printStackTrace();
+	}
+}
+
+public static void main(String[] args)
+{
+	
+	FirstThread ob1=new FirstThread();
+	Thread t1=new Thread(ob1,"sunil");
+	Thread t2=new Thread(ob1,"anil");
+	Thread t3=new Thread(ob1,"manil");
+	t1.start();//all three objects will start at a time,and print the values at a time.
+	t2.start();
+	t3.start();	
+	}
+}
+
+output:-
+sunil 1
+manil 1
+anil 1
+manil 2
+anil 2
+sunil 2
+sunil 3
+manil 3
+anil 3
+sunil 4
+anil 4
+manil 4
+anil 5
+sunil 5
+manil 5
+anil 6
+sunil 6
+manil 6
+sunil 7
+manil 7
+anil 7
+manil 8
+anil 8
+sunil 8
+anil 9
+sunil 9
+manil 9
+sunil 10
+manil 10
+anil 10
+-----------------------------------------------------------------------
+synchronized:-
+package com.may19;
+
+public class FirstThread implements Runnable
+{
+synchronized public void run()//will execute each thread individually.0.
+{
+	try
+	{Thread t=Thread.currentThread();
+	String x=t.getName();
+	
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(x+" "+i);
+			Thread.sleep(1000);//this will help in performing all objects together
+		}
+	}
+	catch(Exception ae)
+	{
+		ae.printStackTrace();
+	}
+}
+
+public static void main(String[] args)
+{
+	
+	FirstThread ob1=new FirstThread();
+	Thread t1=new Thread(ob1,"sunil");
+	Thread t2=new Thread(ob1,"anil");
+	Thread t3=new Thread(ob1,"manil");
+	t1.start();//all three objects will start at a time,and print the values at a time.
+	t2.start();
+	t3.start();	
+	}
+}
+
+output:-
+sunil 1
+sunil 2
+sunil 3
+sunil 4
+sunil 5
+sunil 6
+sunil 7
+sunil 8
+sunil 9
+sunil 10
+anil 1
+anil 2
+anil 3
+anil 4
+anil 5
+anil 6
+anil 7
+anil 8
+anil 9
+anil 10
+manil 1
+manil 2
+manil 3
+manil 4
+manil 5
+manil 6
+manil 7
+manil 8
+manil 9
+manil 10
+------------------------------
 
