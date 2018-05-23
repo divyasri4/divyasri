@@ -1,0 +1,161 @@
+may 22
+
+package com.may21;
+
+import java.sql.*;
+import java.sql.DriverManager;
+public class Firstjdbc
+{
+	public static void main(String[] args)throws Exception
+	{
+		Class.forName("oracle.jdbc.driver.OracleDriver");//load the driver
+		Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","hr","hr");//create connection
+		Statement st=con.createStatement();
+		/*st.execute("create table mphasisstudent(empno number,name varchar2(30),address varchar2(30))");
+	System.out.println("table created");	
+	st.execute("insert into mphasisstudent values(101,'divya','bangalore')");
+	System.out.println("row inserted");
+	st.execute("delete from mphasisstudent where empno=101");
+	 System.out.println("row delete");*/
+	st.execute("update mphasisstudent set name='Swarna' where empno=101");
+	System.out.println("row update");
+	}
+
+}
+
+op:
+---------------------------------------------
+may 23[1]
+package com.may21;
+import java.sql.*;
+import java.util.*;
+public class secondjdbc
+{
+public static void main(String[] args)throws Exception 
+{
+	Scanner ob=new Scanner(System.in);
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection
+("jdbc:oracle:thin:@localhost:1521:orcl","hr","hr");
+System.out.println("enter empno,name,address");
+PreparedStatement st=con.prepareStatement
+("insert into mphasisstudent values(?,?,?)");
+int a=ob.nextInt();
+String b=ob.next();
+String c=ob.next();
+st.setInt(1,a);st.setString(2,b);st.setString(3,c);st.execute();
+System.out.println("row inserted");
+
+}
+}
+
+op:
+------------------------------------------
+[2]for inserting a row
+
+package com.may21;
+import java.sql.*;
+import java.util.*;
+public class secondjdbc
+{
+public static void main(String[] args)throws Exception 
+{
+	Scanner ob=new Scanner(System.in);
+Class.forName("oracle.jdbc.driver.OracleDriver");//for loading the driver
+Connection con=DriverManager.getConnection
+("jdbc:oracle:thin:@localhost:1521:orcl","hr","hr");//connection
+System.out.println("enter empno,name,address");
+PreparedStatement st=con.prepareStatement
+("insert into mphasisstudent values(?,?,?)");
+int a=ob.nextInt();
+String b=ob.next();
+String c=ob.next();
+st.setInt(1,a);st.setString(2,b);st.setString(3,c);st.execute();
+System.out.println("row inserted");
+Statement st1=con.createStatement();
+ResultSet rs=st1.executeQuery("select * from mphasisstudent");
+while(rs.next()){
+	System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+	
+}
+}
+}
+
+
+op:
+
+104
+deepak
+thir
+row inserted
+102 sri vij
+103 dif gfd
+104 deepak thir
+101 Swarna delhi
+101 Swarna del
+-----------------------------------------------------------------------
+[3]for deleting and updating row
+
+package com.may21;
+import java.sql.*;
+import java.util.*;
+public class secondjdbc
+{
+public static void main(String[] args)throws Exception 
+{
+	Scanner ob=new Scanner(System.in);
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection
+("jdbc:oracle:thin:@localhost:1521:orcl","hr","hr");
+System.out.println("enter empno,name,address");
+PreparedStatement st=con.prepareStatement         // Query for inserting a row. This PrepareStatement is used to write Querys.
+("insert into mphasisstudent values(?,?,?)");
+int a=ob.nextInt();
+String b=ob.next();
+String c=ob.next();
+st.setInt(1,a);st.setString(2,b);st.setString(3,c);st.execute();
+System.out.println("row inserted");
+
+System.out.println("enter the empno which you want to delete");
+PreparedStatement st2=con.prepareStatement("delete from mphasisstudent where empno=?");  //this is for deleting a row.
+int x=ob.nextInt();
+st2.setInt(1,x);st2.execute();
+System.out.println("row deleted");
+
+System.out.println("enter empno and address you want to update");
+PreparedStatement st3=con.prepareStatement
+("update mphasisstudent set address=? where empno=?");// this is for updating a row.
+int y=ob.nextInt();
+String z=ob.next();
+st3.setString(1,z);
+st3.setInt(2,y);
+st3.execute();
+System.out.println("row updated");
+Statement st1=con.createStatement();     //for static information
+ResultSet rs=st1.executeQuery("select * from mphasisstudent");
+while(rs.next()){
+	System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+	
+}
+}
+}
+
+
+
+op:
+enter empno,name,address
+105
+ravi
+vij
+row inserted
+enter the empno which you want to delete
+101
+row deleted
+enter empno and address you want to update  
+103
+guntur
+row updated
+102 sri vij
+103 dif guntur
+104 deepak thir
+105 ravi vij
