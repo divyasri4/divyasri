@@ -1,0 +1,77 @@
+<html>
+<head>
+<style>
+body{background-image:url('ima.jpg');
+background-repeat:no-repeat;
+background-size:1025px 700px;}
+</style>
+</head>
+<body>
+<h1>HELLO WORLD!!</h1>
+</body>
+</html>
+-----------------------------------------------------
+<html><head><style>
+w1{background-color:cyan;}
+
+h1{background-color:yellow;
+color:red;}
+
+h2{color:red;
+text-align:center;}
+
+p
+{font-family:"Times New Roman";
+font-size:20px;
+color:red;}
+
+</style></head><body>
+<h1><center>CSS Example</center></h1>
+<h2><w1>My name is Divya</w1></h2>
+<p>This is a paragraph.</p>
+<p><w1>This is a paragraph.</w1></p>
+<p>This is a paragraph.</p>
+</body>
+</html>
+----------------------------------------------------------------
+<html>
+<head>
+<style>
+ul.a{list-style-type:circle;}
+ul.b{list-style-type:square;}
+ol.c{list-style-type:upper-roman;}
+ol.d{list-style-type:lower-alpha;}
+</style>
+</head>
+<body>
+<p>Example of unordered list:</p>
+
+<ul class="a">
+<li>Coffee</li>
+<li>Tea</li>
+<li>Coca cola</li>
+</ul>
+
+<ul class="b">
+<li>Coffee</li>
+<li>Tea</li>
+<li>Coca cola</li>
+</ul>
+
+<p>Example of ordered list:</p>
+
+<ol class="c">
+<li>Coffee</li>
+<li>Tea</li>
+<li>Coca cola</li>
+</ol>
+
+<ol class="d">
+<li>Coffee</li>
+<li>Tea</li>
+<li>Coca Cola</li>
+</ol>
+</body>
+</html>
+
+------------------------------------------------
