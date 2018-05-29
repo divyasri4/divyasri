@@ -1,0 +1,132 @@
+[1a]external
+body{background-color:gray;}
+p{color:black;}
+h3{color:white;}
+h2{color:blue;}
+[1b]
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="abc.css"/>
+</head>
+<body>
+<h3>A White Header</h3>
+<p><pre>This paragraph has a blue font.
+
+The background color of this page is
+
+ gray because we change it with CSS!</pre></p>
+<h2>A Blue Header</h2>
+<p>This paragraph has a blue font.,</p>
+</body>
+</html>
+-------------------------------------------------------------
+[2]inline
+<html>
+<body>
+<p style="color:blue">This is a example of inline stylesheet</p>
+<p style="color:green">This is a example of inline stylesheet</p>
+<p style="color:red">This is a example of inline stylesheet</p>
+</body>
+</html>
+----------------------
+[3]
+<html>
+<head>
+<style>
+input:focus{
+background-color:yellow;
+}
+</style>
+</head>
+<body><fprm>
+First name:<input type="text" name="fname"/><br>
+Last name:<input type="text" name="lname"/><br>
+Address:<input type="text" name="address"/><br>
+Email:<input type="text" name ="email"/><br>
+<input type="submit" value="submit"/>
+</form></body></html>
+-----------------------------------
+[4]javascript
+<html><head>
+<title>This is javascript</title>
+<script>
+document.write("Hello welcome to java script");
+alert("hi all");
+</script>
+<h1 style="color:red">
+welcome to java script</h1>
+</html>
+------------------------
+[5]java sum
+<html><head>
+<titlt>This is javascript</title>
+<h1>First program in java script</h1>
+<script>
+var a,b,c;
+a=prompt("enter a number");
+b=prompt("enter a number");
+c=parseInt(a)+parseInt(b);
+document.write("the sum is "+c);
+alert("the sum is "+a)</script>
+</html>
+-------------------------------
+[6]java sum greatest
+<html><head>
+<titlt>This is javascript</title>
+<h1>First program in java script</h1>
+<script>
+var a,b,c;
+a=prompt("enter a number");
+b=prompt("enter a number");
+c=parseInt(a)+parseInt(b);
+document.write("the sum is "+c);
+alert("the sum is "+c)
+
+if(parseInt(a)>parseInt(b))
+{
+alert("the greatest is "+a);
+document.write("<br>");
+document.write("the greatest is 1nd number");
+
+}
+else
+{
+alert("the greatest is "+b);
+document.write("the greatest is 2nd number");
+}
+</script>
+</html>
+
+------------------------------------------------
+[7]function
+<html>
+<head>
+<script>
+function addNumbers()
+{
+a=prompt("enter a number");
+b=prompt("enter a number");
+c=parseInt(a)+parseInt(b);
+document.write("the sum is"+c);
+}
+function subNumbers()
+{
+a=prompt("enter a number");//accept as a string
+b=prompt("enter a number");
+c=parseInt(a)-parseInt(b);
+document.write("the sum is"+c);
+}
+</script>
+</head>
+<body>
+<input type="button" name="Submit" value="Click here to add nos" onclick="addNumbers()"/>
+<input type="button" name="Submit" value="Click here to add nos" onclick="subNumbers()"/>
+</body>
+</html>
+
+------------------------------------------------
+[8]getElementById
+
+
+ 
+
